@@ -10,11 +10,10 @@ class SingleButton:
         """
         Responsive Button
 
-        :param author: Interaction User
-        :param button1: Takes Button Type SButton
-        :param timeout: Interaction Timeout
-
-        :returns: view: discord.ui.View
+        Args:
+            author: Interaction User
+            button1: Takes Button Type SButton
+            timeout: Interaction Timeout
         """
 
         self.author = author
@@ -29,7 +28,10 @@ class SingleButton:
             self.author, self.btn1, timeout=self.timeout)
 
     def view(self) -> ui.View:
-        """:returns: discord.ui.View"""
+        """
+        Returns:
+            view: discord.ui.View
+        """
 
         view_ = ui.View(timeout=self.timeout)
         if not self.btn1.hidden:
@@ -44,12 +46,11 @@ class DuoButton:
         """
         Responsive Buttons
 
-        :param author: Interaction User
-        :param button1: Takes Button Type SButton
-        :param button2: Takes Button Type SButton
-        :param timeout: Interaction Timeout
-
-        :returns: view: discord.ui.View
+        Args:
+            author: Interaction User
+            button1: Takes Button Type SButton
+            button2: Takes Button Type SButton
+            timeout: Interaction Timeout
         """
 
         self.author = author
@@ -64,7 +65,10 @@ class DuoButton:
             self.author, self.btns[0], self.btns[1], timeout=self.timeout)
 
     def view(self) -> ui.View:
-        """:returns: discord.ui.View"""
+        """
+        Returns:
+            view: discord.ui.View
+        """
 
         view_ = ui.View(timeout=self.timeout)
         for btn_ in self.btns:
@@ -80,13 +84,12 @@ class TrioButton:
         """
         Responsive Buttons
 
-        :param author: Interaction User
-        :param button1: Takes Button Type SButton
-        :param button2: Takes Button Type SButton
-        :param button3: Takes Button Type SButton
-        :param timeout: Interaction Timeout
-
-        :returns: view: discord.ui.View
+        Args:
+            author: Interaction User
+            button1: Takes Button Type SButton
+            button2: Takes Button Type SButton
+            button3: Takes Button Type SButton
+            timeout: Interaction Timeout
         """
 
         self.author = author
@@ -101,7 +104,10 @@ class TrioButton:
             self.author, self.btns[0], self.btns[1], self.btns[2], timeout=self.timeout)
 
     def view(self) -> ui.View:
-        """:returns: discord.ui.View"""
+        """
+        Returns:
+            view: discord.ui.View
+        """
 
         view_ = ui.View(timeout=self.timeout)
         for btn_ in self.btns:
@@ -117,14 +123,13 @@ class QuartetButton:
         """
         Responsive Buttons
 
-        :param author: Interaction User
-        :param button1: Takes Button Type SButton
-        :param button2: Takes Button Type SButton
-        :param button3: Takes Button Type SButton
-        :param button4: Takes Button Type SButton
-        :param timeout: Interaction Timeout
-
-        :returns: view: discord.ui.View
+        Args:
+            author: Interaction User
+            button1: Takes Button Type SButton
+            button2: Takes Button Type SButton
+            button3: Takes Button Type SButton
+            button4: Takes Button Type SButton
+            timeout: Interaction Timeout
         """
         self.author = author
         self.timeout = timeout
@@ -138,7 +143,10 @@ class QuartetButton:
                                            self.btns[2], self.btns[3], timeout=self.timeout)
 
     def view(self) -> ui.View:
-        """:returns: discord.ui.View"""
+        """
+        Returns:
+            view: discord.ui.View
+        """
 
         view_ = ui.View(timeout=self.timeout)
         for btn_ in self.btns:
@@ -155,15 +163,14 @@ class QuintetButton:
         """
         Responsive Buttons
 
-        :param author: Interaction User
-        :param button1: Takes Button Type SButton
-        :param button2: Takes Button Type SButton
-        :param button3: Takes Button Type SButton
-        :param button4: Takes Button Type SButton
-        :param button5: Takes Button Type SButton
-        :param timeout: Interaction Timeout
-
-        :returns: view: discord.ui.View
+        Args:
+            author: Interaction User
+            button1: Takes Button Type SButton
+            button2: Takes Button Type SButton
+            button3: Takes Button Type SButton
+            button4: Takes Button Type SButton
+            button5: Takes Button Type SButton
+            timeout: Interaction Timeout
         """
         self.author = author
         self.timeout = timeout
@@ -177,7 +184,10 @@ class QuintetButton:
                                            self.btns[3], self.btns[4], timeout=self.timeout)
 
     def view(self) -> ui.View:
-        """:returns: discord.ui.View"""
+        """
+        Returns:
+            view: discord.ui.View
+        """
 
         view_ = ui.View(timeout=self.timeout)
         for btn_ in self.btns:
@@ -192,11 +202,10 @@ class MultiButton:
         """
         Responsive Buttons
 
-        :param author: Interaction User
-        :param buttons: Takes Button Type SButton
-        :param timeout: Interaction Timeout
-
-        :returns: view: discord.ui.View
+        Args:
+            author: Interaction User
+            buttons: Takes Button Type SButton
+            timeout: Interaction Timeout
         """
         self.author = author
         self.timeout = timeout
@@ -210,7 +219,10 @@ class MultiButton:
             self.author, self.btns, timeout=self.timeout)
 
     def view(self) -> ui.View:
-        """:returns: discord.ui.View"""
+        """
+        Returns:
+            view: discord.ui.View
+        """
 
         view_ = ui.View(timeout=self.timeout)
         for btn_ in self.btns:

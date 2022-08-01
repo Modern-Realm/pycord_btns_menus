@@ -4,7 +4,7 @@ import setuptools
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
-with open("package/btns_menus/__init__.py") as f:
+with open("btns_menus/__init__.py") as f:
     search_v = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE)
 
     if search_v is not None:
@@ -12,6 +12,11 @@ with open("package/btns_menus/__init__.py") as f:
     else:
         raise RuntimeError("Error occurred while installing !\n"
                            "go to https://github.com/Modern-Realm/discord_btns_menus for more info ...")
+
+packages = [
+    "btns_menus",
+    "btns_menus.builds"
+]
 
 setuptools.setup(
     name="discord-btns-menus",
@@ -45,8 +50,7 @@ setuptools.setup(
         "Typing :: Typed",
     ],
     license="MIT",
-    package_dir={"": "package"},
-    packages=["btns_menus", "btns_menus.builds"],
+    packages=packages,
     include_package_data=True,
     python_requires=">=3.8"
 )

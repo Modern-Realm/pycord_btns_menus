@@ -161,13 +161,13 @@ async def predicate_permsChecker(interaction: discord.Interaction, method: str, 
     return False
 
 
-def run_async(target: Callable, *args, **kwargs):
+def run_async(target: Callable, *args: Any, **kwargs: Any) -> Optional[Any]:
     class RunThread(threading.Thread):
         def __init__(self, func: Callable):
             self.func = func
             self.args = args
             self.kwargs = kwargs
-            self.result = None
+            self.result: Optional[Any] = None
 
             super().__init__()
 

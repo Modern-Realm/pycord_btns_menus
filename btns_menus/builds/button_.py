@@ -27,23 +27,22 @@ class SButton:
         """
         It is a decorator used to create a **Button** overwriting ui.Button
 
-        :param label: Label of the Button
-        :param custom_id: Unique ID of the Button
-        :param disabled: It is used to enable/disable the Button, i.e. Preventing user from using it
-        :param style: Color of the Button
-        :param url: Onclick Redirects to the given url
-        :param emoji: Emoji for the Button
-        :param row: Places the Button in given Row
-        :param content: content of the message
-        :param response: Sends the message (str/ embed) in user channel
-        :param rewrite: It is used to send the message by editing the original message rather than sending a new one
-        :param ephemeral: It is used to send the message where it's only visible to interacted user or to all
-        :param delete_msg: Deletes the original message
-        :param hidden: It hides the Button from View
-        :param author: Interaction User
-        :param verify: It is used to make the func to check for author parameter or not
-
-        :returns: Button
+        Args:
+            label: Label of the Button
+            custom_id: Unique ID of the Button
+            disabled: It is used to enable/disable the Button, i.e. Preventing user from using it
+            style: Color of the Button
+            url: Onclick Redirects to the given url
+            emoji: Emoji for the Button
+            row: Places the Button in given Row
+            content: content of the message
+            response: Sends the message (str/ embed) in user channel
+            rewrite: It is used to send the message by editing the original message rather than sending a new one
+            ephemeral: It is used to send the message where it's only visible to interacted user or to all
+            delete_msg: Deletes the original message
+            hidden: It hides the Button from View
+            author: Interaction User
+            verify: It is used to make the func to check for author parameter or not
         """
 
         if response is None:
@@ -79,10 +78,12 @@ class SButton:
         """
         Updates the option of the **Button**
 
-        :param details: Takes any datatype for updating
-        :param option: The option which should be overwritten
+        Args:
+            details: Takes any datatype for updating
+            option: The option which should be overwritten
 
-        :returns: None
+        Raises:
+            ButtonException: raises the exception if the option is invalid
         """
 
         if option not in self.kwargs.keys():
@@ -90,13 +91,15 @@ class SButton:
         else:
             self.kwargs[option] = details
 
-    def update(self, **options):
+    def update(self, **options: Any):
         """
-        Updates the options of the **Button*
+        Updates the options of the **Button**
 
-        :param options: takes variables
+        Args:
+            **options: takes Button options
 
-        :returns: None
+        Raises:
+            ButtonException: raises the exception if the option is invalid
         """
 
         for key in options:
@@ -112,7 +115,8 @@ class SButton:
 
         - Aliases: ['args', 'kwargs']
 
-        :returns: Dict
+        Returns:
+            Options: Dictionary of options of a Button
         """
 
         return self.kwargs
@@ -122,7 +126,8 @@ class SButton:
         """
         It's a property used to get author of the button
 
-        :returns: user: discord.Member (or) None
+        Returns:
+            author: returns a user obj if one exists
         """
 
         return self.kwargs['author']
@@ -132,7 +137,8 @@ class SButton:
         """
         It's a property used to get label of the button
 
-        :returns: name: str
+        Returns:
+            name: Label of the Button
         """
 
         return self.kwargs['label'] or self.kwargs['emoji']
@@ -142,7 +148,8 @@ class SButton:
         """
         It's a property used to get ID of the button
 
-        :returns: custom_id: str (or) None
+        Returns:
+            custom_id: Button ID
         """
 
         return self.kwargs['custom_id']
@@ -152,7 +159,8 @@ class SButton:
         """
         It's a property used to check whether it's ephemeral or not
 
-        :returns: ephemeral: bool , i.e [True, False]
+        Returns:
+            ephemeral: true, if the button response type is ephemeral or else false
         """
 
         return self.kwargs['ephemeral']
@@ -162,17 +170,23 @@ class SButton:
         """
         It's a property used to get hidden parm of the button
 
-        :returns: hidden: bool, i.e [True, False]
+        Returns:
+            hidden:
         """
 
         return self.kwargs['hidden']
 
-    def after_response(self, **options):
+    def after_response(self, **options: Any):
         """
         It's an event type function which changes the provided options after button ( onclick )
 
-        :param options: takes variables
-        :returns: None
+        options are same as those in `SButton`
+
+        Args:
+            **options: takes Button options
+
+        Raises:
+            ButtonException: raises the exception if the option is invalid
         """
 
         kwargs = {}
@@ -185,27 +199,27 @@ class SButton:
 
             self.after_ = kwargs
 
-    async def add_coro_func(self, function, *args, **kwargs):
+    async def add_coro_func(self, function: Callable, *args: Any, **kwargs: Any):
         """
         It's an asynchronous function which stores same function type
         and adds the func to button for execution after getting clicked
 
-        :param function: takes asynchronous function
-        :param args: takes args of the function provided by a user
-        :param kwargs: takes kwargs of the function provided by a user
-        :returns: None
+        Args:
+            function: takes asynchronous function
+            *args: takes args of the function provided by a user
+            **kwargs: takes kwargs of the function provided by a user
         """
 
         self.kwargs['coro_func'] = lambda: function(*args, **kwargs)
 
-    def add_func(self, function, *args, **kwargs):
+    def add_func(self, function: Callable, *args: Any, **kwargs: Any):
         """
         It's a function which stores same function type and adds the func to button for execution after getting clicked
 
-        :param function: takes a function
-        :param args: takes args of the function provided by a user
-        :param kwargs: takes kwargs of the function provided by a user
-        :returns: None
+        Args:
+            function: takes a function
+            *args: takes args of the function provided by a user
+            **kwargs: takes kwargs of the function provided by a user
         """
 
         self.kwargs['func'] = lambda: function(*args, **kwargs)
@@ -215,7 +229,8 @@ class SButton:
         """
         It's a property used to get a dictionary of options which are to be changed after button click
 
-        :returns: Dict (or) None
+        Returns:
+            UpdatedOptions: Dict if there is a query defined or else returns None
         """
 
         return self.after_
@@ -227,8 +242,8 @@ class SButton:
         """
         It's used to check whether the interaction user is the owner of interaction guild
 
-        :param error_msg: Sends a message to the user (Interaction.User) if the condition not satisfies
-        :return: None
+        Args:
+            error_msg: Sends a message to the user (Interaction.User) if the condition not satisfies
         """
 
         self.pred_decorator("is_owner", None, error_msg=error_msg)
@@ -237,9 +252,9 @@ class SButton:
         """
         It's used to check whether the interaction user has any one of the mentioned roles of interaction guild
 
-        :param roles: Takes either ID's or Name's of the roles of interaction guild
-        :param error_msg: Sends a message to the user (Interaction.User) if the condition not satisfies
-        :return: None
+        Args:
+            *roles: Takes either ID's or Name's of the roles of interaction guild
+            error_msg: Sends a message to the user (Interaction.User) if the condition not satisfies
         """
 
         self.pred_decorator("has_any_role", roles, error_msg=error_msg)
@@ -248,30 +263,30 @@ class SButton:
         """
         It's used to check whether the interaction user has the mentioned roles of interaction guild
 
-        :param roles: Takes either ID's or Name's of the roles of interaction guild
-        :param error_msg: Sends a message to the user (Interaction.User) if the condition not satisfies
-        :return: None
+        Args:
+            *roles: Takes either ID's or Name's of the roles of interaction guild
+            error_msg: Sends a message to the user (Interaction.User) if the condition not satisfies
         """
 
         self.pred_decorator("has_roles", roles, error_msg=error_msg)
 
-    def has_permissions(self, *, error_msg: Union[str, discord.Embed] = None, **perms: bool):
+    def has_permissions(self, *, error_msg: Union[str, discord.Embed] = None, **perms: Any):
         """
         It's used to check whether the interaction user has the mentioned permissions of the interaction guild/ channel
 
-        :param error_msg: Sends a message to the interaction user if the condition not satisfies
-        :param perms: Takes the permissions flags (discord.Permissions.VALID_FLAGS)
-        :return: None
+        Args:
+            error_msg: Sends a message to the interaction user if the condition not satisfies
+            **perms: Takes the permissions flags `(discord.Permissions.VALID_FLAGS)`
         """
 
         self.pred_decorator("has_permissions", perms, error_msg=error_msg)
 
     def is_author(self, /, error_msg: Union[str, discord.Embed] = None):
         """
-        It's used to check whether the interaction user and SButton.author are same or not
+        It's used to check whether the `Interaction.user` and `SButton.author` are same or not
 
-        :param error_msg: Sends a message to the interaction user if the condition not satisfies
-        :return: None
+        Args:
+            error_msg: Sends a message to the interaction user if the condition not satisfies
         """
 
         self.pred_decorator("is_author", self.author, error_msg=error_msg)
@@ -280,9 +295,9 @@ class SButton:
         """
         It's used to check whether the interaction user is in mentioned users or not
 
-        :param users: Takes either ID's or Name's of the members of interaction guild
-        :param error_msg: Sends a message to the interaction user if the condition not satisfies
-        :return: None
+        Args:
+            *users: Takes either ID's or Name's of the members of interaction guild
+            error_msg: Sends a message to the interaction user if the condition not satisfies
         """
 
         self.pred_decorator("is_any_user", users, error_msg=error_msg)

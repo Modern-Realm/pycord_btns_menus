@@ -1,10 +1,9 @@
 from btns_menus.builds.abc import *
-from btns_menus.errors import ButtonException
+from btns_menus.errors import MenuException
 
 import discord
 from typing import *
-from discord import ui
-from discord.components import SelectOption
+from discord import ui, SelectOption
 
 
 class SDropMenu:
@@ -27,22 +26,21 @@ class SDropMenu:
         """
         It is a decorator used to create a **DropMenu** overwriting ui.Select
 
-        :param custom_id: Unique ID of the Button
-        :param placeholder: A short placeholder for DropMenu
-        :param min_values: Limiting the user to select atleast minimum options in DropMenu
-        :param max_values: Limiting the user to select atmost maximum options in DropMenu
-        :param options: Options which are shown in DropMenu and can be selected by interacted user
-        :param disabled: It is used to enable/disable the DropMenu, i.e. Preventing user from using it
-        :param row: Places the DropMenu in given Row
-        :param content: content of the message
-        :param response: Sends the message (str, embed) in user channel
-        :param rewrite: It is used to send the message by editing the original message rather than sending a new one
-        :param ephemeral: It is used to send the message where it's only visible to interacted user or to all
-        :param hidden:  It hides the Button from View
-        :param author: Interaction User
-        :param verify: It is used to make the func to check for author parameter or not
-
-        :returns: DropMenu
+        Args:
+            custom_id: Unique ID of the Button
+            placeholder: A short placeholder for DropMenu
+            min_values: Limiting the user to select atleast minimum options in DropMenu
+            max_values: Limiting the user to select atmost maximum options in DropMenu
+            options: Options which are shown in DropMenu and can be selected by interacted user
+            disabled: It is used to enable/disable the DropMenu, i.e. Preventing user from using it
+            row: Places the DropMenu in given Row
+            content: content of the message
+            response: Sends the message (str, embed) in user channel
+            rewrite: It is used to send the message by editing the original message rather than sending a new one
+            ephemeral: It is used to send the message where it's only visible to interacted user or to all
+            hidden:  It hides the Button from View
+            author: Interaction User
+            verify: It is used to make the func to check for author parameter or not
         """
 
         if response is None:
@@ -75,16 +73,36 @@ class SDropMenu:
         self.selected_values: Optional[Union[str, List]] = None
         self.interaction: Optional[discord.Interaction] = None
 
-    def update_one(self, details, option: str):
+    def update_one(self, details: Any, option: str):
+        """
+        Updates the option of the **SDropMenu**
+
+        Args:
+            details: Takes any datatype for updating
+            option: The option which should be overwritten
+
+        Raises:
+            MenuException: raises the exception if the option is invalid
+        """
+
         if option not in self.kwargs.keys():
-            raise ButtonException(f"Invalid option `--{option}`")
+            raise MenuException(f"Invalid option `--{option}`")
         else:
             self.kwargs[option] = details
 
-    def update(self, **options):
+    def update(self, **options: Any):
+        """
+        Updates the options of the **SDropMenu**
+
+        Args:
+            **options: takes SDropMenu options
+
+        Raises:
+            MenuException: raises the exception if the option is invalid
+        """
         for key in options:
             if key not in self.kwargs.keys():
-                raise ButtonException(f"Invalid option `--{key}`")
+                raise MenuException(f"Invalid option `--{key}`")
             else:
                 self.kwargs[key] = options[key]
 
@@ -95,7 +113,8 @@ class SDropMenu:
 
         - Aliases: ['args', 'kwargs']
 
-        :returns: Dict
+        Returns:
+            Options: Dictionary of options of a Button
         """
 
         return self.kwargs
@@ -105,7 +124,8 @@ class SDropMenu:
         """
         It's a property used to get author of the DropMenu
 
-        :returns: user: discord.Member (or) None
+        Returns:
+            author: returns a user obj if one exists
         """
 
         return self.kwargs['author']
@@ -115,7 +135,8 @@ class SDropMenu:
         """
         It's a property used to get placeholder of the DropMenu
 
-        :returns:
+        Returns:
+            placeholder: returns value of placeholder
         """
 
         return self.kwargs['placeholder']
@@ -125,7 +146,8 @@ class SDropMenu:
         """
         It's a property used to get ID of the DropMenu
 
-        :returns: custom_id: str (or) None
+        Returns:
+            custom_id: DropMenu ID
         """
 
         return self.kwargs['custom_id']
@@ -135,7 +157,8 @@ class SDropMenu:
         """
         It's a property used to check whether it's ephemeral or not
 
-        :returns: ephemeral: bool , i.e [True, False]
+        Returns:
+            ephemeral: true, if the dropmenu response type is ephemeral or else false
         """
 
         return self.kwargs['ephemeral']
@@ -145,8 +168,10 @@ class SDropMenu:
         """
         It's a property used to get hidden parm of the DropMenu
 
-        :returns: hidden: bool, i.e [True, False]
+        Returns:
+            hidden:
         """
+
         return self.kwargs['hidden']
 
     @property
@@ -154,24 +179,28 @@ class SDropMenu:
         """
         It's a property used to get all queries of the DropMenu
 
-        :returns: queries: List (or) None
+        Returns:
+            queries: List (or) None
         """
 
         return self.kwargs['queries']
 
-    def after_response(self, **options):
+    def after_response(self, **options: Any):
         """
         It's an event type function which changes the provided options after option (on-select) of the DropMenu
 
-        :param options: takes variables
-        :returns: None
+        Args:
+            **options: takes dropmenu options
+
+        Raises:
+            MenuException: raises the exception if the option is invalid
         """
 
         kwargs = {}
         if len(options) >= 1:
             for key in options:
                 if key not in self.kwargs.keys():
-                    raise ButtonException(f"Invalid option `--{key}`")
+                    raise MenuException(f"Invalid option `--{key}`")
                 else:
                     kwargs.update({key: options[key]})
 
@@ -182,33 +211,34 @@ class SDropMenu:
         """
         It's a property used to get all options which are to be changed after option (on-select) of the DropMenu
 
-        :returns: Dict (or) None
+        Returns:
+            UpdatedOptions: Dict if there is a query defined or else returns None
         """
 
         return self.after_
 
-    async def add_coro_func(self, function, *args, **kwargs):
+    async def add_coro_func(self, function: Callable, *args: Any, **kwargs: Any):
         """
         It's an asynchronous function which stores same function type
         and adds the func to DropMenu for execution after getting an option selected
 
-        :param function: takes asynchronous function
-        :param args: takes args of the function provided by a user
-        :param kwargs: takes kwargs of the function provided by a user
-        :returns: None
+        Args:
+            function: takes asynchronous function
+            *args: takes args of the function provided by a user
+            **kwargs: takes kwargs of the function provided by a user
         """
 
         self.kwargs['coro_func'] = lambda: function(*args, **kwargs)
 
-    def add_func(self, function, *args, **kwargs):
+    def add_func(self, function: Callable, *args: Any, **kwargs: Any):
         """
         It's a function which stores same function type and
         adds the func to DropMenu for execution after getting an option selected
 
-        :param function: takes a function
-        :param args: takes args of the function provided by a user
-        :param kwargs: takes kwargs of the function provided by a user
-        :returns: None
+        Args:
+            function: takes a function
+            *args: takes args of the function provided by a user
+            **kwargs: takes kwargs of the function provided by a user
         """
 
         self.kwargs['func'] = lambda: function(*args, **kwargs)
@@ -217,8 +247,10 @@ class SDropMenu:
         """
         It's an event type function used to add queries for the DropMenu
 
-        :param query: takes option-name and response
-        :returns: None
+        Here the query (option-name) will be mapped with one response
+
+        Args:
+            *query: takes option-name and response
         """
 
         for query in query:
@@ -229,8 +261,10 @@ class SDropMenu:
         """
         It's an event type function used to add queries for the DropMenu
 
-        :param queries: takes option-name and response
-        :returns: None
+        Here the queries (option-name(s)) will be mapped with one response
+
+        Args:
+            *queries: takes list of option-name(s) and response
         """
 
         for query_ in queries:
@@ -238,15 +272,18 @@ class SDropMenu:
             queries_.append(query_)
 
     @staticmethod
-    def convert_resp(content: str, values: list):
+    def convert_resp(content: str, values: List):
         """
         It's not a reusable function
 
         Used for formatting the provided content with respective values
 
-        :param content: takes content/ message
-        :param values: selected values of the DropMenu
-        :returns: None
+        Args:
+            content: takes content/ message
+            values: selected values of the DropMenu
+
+        Raises:
+            MenuException: raises the exception if the option is invalid
         """
 
         count = 1
@@ -255,8 +292,8 @@ class SDropMenu:
             if "{values}" in content:
                 try:
                     content = content.replace("{values}", ", ".join(values))
-                except ButtonException:
-                    raise ButtonException(
+                except:
+                    raise MenuException(
                         "Format key not Found\nTry this formatters: `{values}`, `{{values[index]}}`")
             elif "{{values[" in content:
                 try:
@@ -267,12 +304,12 @@ class SDropMenu:
                         content[content.index("[") + 1: content.index("]")])
                     content = content.replace(
                         f"{content[x: y + 2]}", values[index])
-                except ButtonException:
-                    raise ButtonException(
-                        "Format key not Found\nTry this formatters: `{values}`, `{{values[index]}}`")
                 except IndexError:
                     raise IndexError(
                         f"list index out of range (len(values) = {len(values)})")
+                except:
+                    raise MenuException(
+                        "Format key not Found\nTry this formatters: `{values}`, `{{values[index]}}`")
             count += 1
 
         return content
@@ -285,8 +322,8 @@ class SDropMenu:
         """
         It's used to check whether the interaction user is the owner of interaction guild
 
-        :param error_msg: Sends a message to the user (Interaction.User) if the condition not satisfies
-        :return: None
+        Args:
+            error_msg: Sends a message to the user (Interaction.User) if the condition not satisfies
         """
 
         self.pred_decorator("is_owner", None, error_msg=error_msg)
@@ -295,9 +332,9 @@ class SDropMenu:
         """
         It's used to check whether the interaction user has any one of the mentioned roles of interaction guild
 
-        :param roles: Takes either ID's or Name's of the roles of interaction guild
-        :param error_msg: Sends a message to the user (Interaction.User) if the condition not satisfies
-        :return: None
+        Args:
+            *roles: Takes either ID's or Name's of the roles of interaction guild
+            error_msg: Sends a message to the user (Interaction.User) if the condition not satisfies
         """
 
         self.pred_decorator("has_any_role", roles, error_msg=error_msg)
@@ -306,20 +343,20 @@ class SDropMenu:
         """
         It's used to check whether the interaction user has the mentioned roles of interaction guild
 
-        :param roles: Takes either ID's or Name's of the roles of interaction guild
-        :param error_msg: Sends a message to the user (Interaction.User) if the condition not satisfies
-        :return: None
+        Args:
+            *roles: Takes either ID's or Name's of the roles of interaction guild
+            error_msg: Sends a message to the user (Interaction.User) if the condition not satisfies
         """
 
         self.pred_decorator("has_roles", roles, error_msg=error_msg)
 
-    def has_permissions(self, *, error_msg: Union[str, discord.Embed] = None, **perms: bool):
+    def has_permissions(self, *, error_msg: Union[str, discord.Embed] = None, **perms: Dict[str, bool]):
         """
         It's used to check whether the interaction user has the mentioned permissions of the interaction guild/ channel
 
-        :param error_msg: Sends a message to the interaction user if the condition not satisfies
-        :param perms: Takes the permissions flags (discord.Permissions.VALID_FLAGS)
-        :return: None
+        Args:
+            error_msg: Sends a message to the interaction user if the condition not satisfies
+            **perms: Takes the permissions flags (discord.Permissions.VALID_FLAGS)
         """
 
         self.pred_decorator("has_permissions", perms, error_msg=error_msg)
@@ -328,8 +365,8 @@ class SDropMenu:
         """
         It's used to check whether the interaction user and SButton.author are same or not
 
-        :param error_msg: Sends a message to the interaction user if the condition not satisfies
-        :return: None
+        Args:
+            error_msg: Sends a message to the interaction user if the condition not satisfies
         """
 
         self.pred_decorator("is_author", self.author, error_msg=error_msg)
@@ -338,9 +375,9 @@ class SDropMenu:
         """
         It's used to check whether the interaction user is in mentioned users or not
 
-        :param users: Takes either ID's or Name's of the members of interaction guild
-        :param error_msg: Sends a message to the interaction user if the condition not satisfies
-        :return: None
+        Args:
+            *users: Takes either ID's or Name's of the members of interaction guild
+            error_msg: Sends a message to the interaction user if the condition not satisfies
         """
 
         self.pred_decorator("is_any_user", users, error_msg=error_msg)

@@ -1,0 +1,48 @@
+site_name: discord-btns-menus
+site_description: A responsive package for Buttons, DropMenus, Combinations and Paginator
+site_author: skrphenix
+
+repo_url: https://github.com/Modern-Realm/discord_btns_menus
+edit_uri: ''
+
+theme:
+  name: "readthedocs"
+  locale: en
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - django
+    - python
+
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+
+plugins:
+  - search
+  - mkdocstrings:
+      watch:
+        - btns_menus
+      default_handler: python
+      handlers:
+        python:
+          options:
+            show_source: false
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Getting Started: getting-started.md
+  - User Guide:
+      - Buttons: user-guide/buttons.md
+      - DropMenus: user-guide/dropmenus.md
+      - Combinations: user-guide/combinations.md
+      - Paginator: user-guide/paginator.md
+      - Errors: user-guide/errors.md
+  - About:
+      - Code Of Conduct: about/CODE_OF_CONDUCT.md
+      - Contributing: about/CONTRIBUTING.md
+      - License: about/LICENSE.md
+
+copyright: Copyright (c) 2021 skrphenix

@@ -3,16 +3,15 @@
 #### A responsive package for Buttons, DropMenus, Combinations and Paginator
 
 ##### • This module makes the process a lot easier !
-
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+[![python badge](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/ "Python")
 
 [![CodeQL](https://github.com/Modern-Realm/discord_btns_menus/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Modern-Realm/discord_btns_menus/actions/workflows/codeql-analysis.yml)
-[![Generic badge](https://img.shields.io/badge/Python-3.8-blue.svg)](https://shields.io/)
-[![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
-[![Windows](https://svgshare.com/i/ZhY.svg)](https://svgshare.com/i/ZhY.svg)
-[![Linux](https://svgshare.com/i/Zhy.svg)](https://svgshare.com/i/Zhy.svg)
+[![Generic badge](https://img.shields.io/badge/Python-3.8-blue.svg)](https://www.python.org/)
+![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)
+![Windows](https://svgshare.com/i/ZhY.svg)
+![Linux](https://svgshare.com/i/Zhy.svg)
 
-### Join [Official Discord Server](https://discord.gg/GVMWx5EaAN) for more guidance !
+#### Join [Official Discord Server](https://discord.gg/GVMWx5EaAN  "click to Join") for more guidance !
 
 <hr/>
 
@@ -24,7 +23,7 @@
 
 ### <li> Combinations (Usage of both Buttons & DropMenus) </li>
 
-### <li> Paginator [![Generic badge](https://img.shields.io/badge/NEW-gold.svg)](https://shields.io/) </li>
+### <li> Paginator ![Generic badge](https://img.shields.io/badge/NEW-gold.svg) </li>
 
 <hr/>
 
@@ -60,25 +59,10 @@ Python 3.8 or higher is required !
 - ## [py-cord](https://github.com/Pycord-Development/pycord)
 - ## [nextcord](https://github.com/nextcord/nextcord)
 - ## [discord.pyV2.0](https://github.com/Rapptz/discord.py)
-- ## [disnake](https://github.com/DisnakeDev/disnake)
-  `For disnake you should Refactor/ Shim all discord terms to disnake terms to make Package work`
+- ## [disnake](https://github.com/DisnakeDev/disnake) <br/>
+  `For disnake you should Refactor all discord terms to disnake terms to make Package work`
 
 > <b>Note:</b> Don't install more than one **DEPENDENCY !**
-
-<hr/>
-
-# How to import module ?
-
-```python
-# For buttons:
-from btns_menus.Buttons import SButton, SingleButton
-
-# For DropMenus:
-from btns_menus.DropMenus import SDropMenu, DuoDropMenu
-
-# For Combinations:
-from btns_menus.Combinations import MultiBtnAndDropMenu
-```
 
 <hr/>
 

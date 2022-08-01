@@ -1,10 +1,8 @@
 from btns_menus.DropMenus import SDropMenu, SingleDropMenu, DuoDropMenu, TrioDropMenu
 import discord
-import os
 
-from typing import Optional
 from discord import SelectOption
-from discord import utils, ButtonStyle
+from discord import utils
 from discord.ext import commands
 
 intents = discord.Intents.all()

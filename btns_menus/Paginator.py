@@ -10,25 +10,43 @@ from typing import Union, Optional, Dict, List
 
 
 class PgTypes:
+    """
+    enums used to define the type of paginator you want to use
+
+    ### Available Types
+    - first/ one
+    - second/ two
+    - third/ three
+
+    ### Example
+    ```python
+    pg_type = PgTypes.first
+    ```
+    """
+
     first = 1
     second = 2
+    third = 3
 
     # Aliases
     one = 1
     two = 2
+    three = 3
 
 
 def SOption(*, name: str, embed: discord.Embed, description: str = None,
             emoji: Union[str, discord.Emoji, discord.PartialEmoji] = None
             ) -> Dict:
-    """It's a decorator used to overwrite options in discord.ui.Select
+    """It's a decorator used to overwrite options in `discord.ui.Select`
 
-    :param name: label for option
-    :param embed: If option is selected, the embed will be sent !
-    :param description: Description for the option
-    :param emoji: Emoji for the option
+    Args:
+        name: label for option
+        embed: If option is selected, the embed will be sent !
+        description: Description for the option
+        emoji: Emoji for the option
 
-    :returns: Dict
+    Returns:
+        decorator: Dictionary of options
     """
     decorator_ = {
         "name": name, "description": description, "embed": embed, "emoji": emoji
@@ -47,29 +65,29 @@ class Paginator:
                  menus: List[SDropMenu] = None,
                  append_before: bool = False,
                  footer: str = None,
-                 timeout: Optional[float] = DEFAULT_TIMEOUT
+                 timeout: Optional[Union[int, float]] = DEFAULT_TIMEOUT
                  ):
         """
         Paginator is used to show users the given embeds in pages format using **navigation Buttons and DropMenus**
 
-        Custom ids for Buttons:
-            home, forward, backward, skip_Tofirst, skip_Tolast & delete
-        Custom id for Menu:
+        # Custom IDs for Buttons:
+            home, forward, backward, skip_Tofirst, skip_Tolast, delete
+
+        # Custom IDs for Menu:
             commands-list, cmds-list
 
-        These ID's are can be used to modify the buttons/menus in the Paginator
+        **Note:** These ID's can be used to modify the buttons/menus in the Paginator
 
-        :param author: User who will interact with the Paginator
-        :param embeds: The list of embeds that acts as Pages
-        :param commands_list: The list of options which are shown as options in a Drop Menu
-        :param pg_type: Takes the PgTypes
-        :param buttons: List of buttons used to navigate of interact with the pages/embeds
-        :param menus: List of Menus used to make a user select options from it
-        :param append_before: If true, buttons & menus will be added before default buttons & menus in Paginator and vice-versa
-        :param footer: Used to add content into text in footer of discord.Embed
-        :param timeout: Timeout of the interaction
-
-        :returns: view: discord.ui.View
+        Args:
+            author: User who will interact with the Paginator
+            embeds: The list of embeds that acts as Pages
+            commands_list: The list of options which are shown as options in a Drop Menu
+            pg_type: Takes the PgTypes
+            buttons: List of buttons used to navigate of interact with the pages/embeds
+            menus: List of Menus used to make a user select options from it
+            append_before: If true, buttons & menus will be added before default buttons & menus in Paginator and vice-versa
+            footer: Used to add content into text in footer of discord.Embed
+            timeout: Timeout of the interaction
         """
 
         self.author = author
@@ -301,7 +319,9 @@ class Paginator:
                     self.menus = [self.cmds_menu] + self.menus
 
     def view(self) -> ui.View:
-        """:returns: discord.ui.View"""
+        """
+        Returns:
+            view: discord.ui.View"""
 
         view_ = MultiBtnAndMenu(self.author, self.buttons, self.menus, timeout=self.timeout).view()
         return view_
