@@ -14,7 +14,7 @@
 <a href="https://www.python.org/downloads/" target="_blank">
 <img alt="Python badge" src="https://img.shields.io/badge/Python-3.8-blue.svg">
 </a>
-<a href="/about/LICENSE/">
+<a href="discord_btns_menus/about/LICENSE/">
 <img alt="Github License" src="https://badgen.net/github/license/Naereen/Strapdown.js">
 </a>
 <img alt="Windows" src="https://svgshare.com/i/ZhY.svg">
