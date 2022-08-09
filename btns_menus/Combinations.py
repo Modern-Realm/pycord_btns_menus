@@ -13,12 +13,11 @@ class BtnAndDropMenu:
         """
         Responsive Buttons and DropMenus
 
-        :param author: Interaction User
-        :param button1: takes button type SButton
-        :param menu1: takes dropmenu type SDropMenu
-        :param timeout: Interaction Timeout
-
-        :returns: view: discord.ui.View
+        Args:
+            author: Interaction User
+            button1: takes button type SButton
+            menu1: takes dropmenu type SDropMenu
+            timeout: Interaction Timeout
         """
 
         self.author = author
@@ -36,7 +35,10 @@ class BtnAndDropMenu:
             self.author, self.btn1, self.menu1, timeout=self.timeout)
 
     def view(self) -> ui.View:
-        """:returns: discord.ui.View"""
+        """
+        Returns:
+            view: discord.ui.View
+        """
 
         view_ = ui.View(timeout=self.timeout)
         for component_ in self.components:
@@ -55,13 +57,12 @@ class Btn2AndDropMenu:
         """
         Responsive Buttons and DropMenus
 
-        :param author: Interaction User
-        :param button1: takes button type SButton
-        :param button2: takes button type SButton
-        :param menu1: takes Dropmenu type SDropMenu
-        :param timeout: Interaction Timeout
-
-        :returns: view: discord.ui.View
+        Args:
+            author: Interaction User
+            button1: takes button type SButton
+            button2: takes button type SButton
+            menu1: takes Dropmenu type SDropMenu
+            timeout: Interaction Timeout
         """
 
         self.author = author
@@ -80,7 +81,10 @@ class Btn2AndDropMenu:
             self.author, self.btn1, self.btn2, self.menu1, timeout=self.timeout)
 
     def view(self) -> ui.View:
-        """:returns: discord.ui.View"""
+        """
+        Returns:
+            view: discord.ui.View
+        """
 
         view_ = ui.View(timeout=self.timeout)
         for component_ in self.components:
@@ -100,14 +104,13 @@ class Btn3AndDropMenu:
         """
         Responsive Buttons and DropMenus
 
-        :param author: Interaction User
-        :param button1: takes button type SButton
-        :param button2: takes button type SButton
-        :param button3: takes button type SButton
-        :param menu1: takes dropmenu type SDropMenu
-        :param timeout: Interaction Timeout
-
-        :returns: view: discord.ui.View
+        Args:
+            author: Interaction User
+            button1: takes button type SButton
+            button2: takes button type SButton
+            button3: takes button type SButton
+            menu1: takes dropmenu type SDropMenu
+            timeout: Interaction Timeout
         """
 
         self.author = author
@@ -127,6 +130,11 @@ class Btn3AndDropMenu:
                                              self.btn3, self.menu1, timeout=self.timeout)
 
     def view(self) -> ui.View:
+        """
+        Returns:
+            view: discord.ui.View
+        """
+
         view_ = ui.View(timeout=self.timeout)
         for component_ in self.components:
             if not component_.hidden:
@@ -145,15 +153,14 @@ class Btn4AndDropMenu:
         """
         Responsive Buttons and DropMenus
 
-        :param author: Interaction User
-        :param button1: takes button type SButton
-        :param button2: takes button type SButton
-        :param button3: takes button type SButton
-        :param button4: takes button type SButton
-        :param menu1: takes dropmenu type SDropMenu
-        :param timeout: Interaction Timeout
-
-        :returns: view: discord.ui.View
+        Args:
+            author: Interaction User
+            button1: takes button type SButton
+            button2: takes button type SButton
+            button3: takes button type SButton
+            button4: takes button type SButton
+            menu1: takes dropmenu type SDropMenu
+            timeout: Interaction Timeout
         """
 
         self.author = author
@@ -175,7 +182,10 @@ class Btn4AndDropMenu:
                                              self.btn3, self.btn4, self.menu1, timeout=self.timeout)
 
     def view(self) -> ui.View:
-        """:returns: discord.ui.View"""
+        """
+        Returns:
+            view: discord.ui.View
+        """
 
         view_ = ui.View(timeout=self.timeout)
         for component_ in self.components:
@@ -194,13 +204,12 @@ class BtnAnd2DropMenu:
         """
         Responsive Buttons and DropMenus
 
-        :param author: Interaction User
-        :param button1: takes button type SButton
-        :param menu1: takes dropmenu type SDropMenu
-        :param menu2: takes dropmenu type SDropMenu
-        :param timeout: Interaction Timeout
-
-        :returns: view: discord.ui.View
+        Args:
+            author: Interaction User
+            button1: takes button type SButton
+            menu1: takes dropmenu type SDropMenu
+            menu2: takes dropmenu type SDropMenu
+            timeout: Interaction Timeout
         """
 
         self.author = author
@@ -219,7 +228,10 @@ class BtnAnd2DropMenu:
             self.author, self.btn1, self.menu1, self.menu2, timeout=self.timeout)
 
     def view(self) -> ui.View:
-        """:returns: discord.ui.View"""
+        """
+        Returns:
+            view: discord.ui.View
+        """
 
         view_ = ui.View(timeout=self.timeout)
         for component_ in self.components:
@@ -238,14 +250,13 @@ class Btn2And2DropMenu:
         """
         Responsive Buttons and DropMenus
 
-        :param author: Interaction User
-        :param button1: takes button type SButton
-        :param button2: takes button type SButton
-        :param menu1: takes dropmenu type SDropMenu
-        :param menu2: takes dropmenu type SDropMenu
-        :param timeout: Interaction Timeout
-
-        :returns: view: discord.ui.View
+        Args:
+            author: Interaction User
+            button1: takes button type SButton
+            button2: takes button type SButton
+            menu1: takes dropmenu type SDropMenu
+            menu2: takes dropmenu type SDropMenu
+            timeout: Interaction Timeout
         """
 
         self.author = author
@@ -265,7 +276,10 @@ class Btn2And2DropMenu:
                                               self.menu2, timeout=self.timeout)
 
     def view(self) -> ui.View:
-        """:returns: discord.ui.View"""
+        """
+        Returns:
+             view: discord.ui.View
+        """
 
         view_ = ui.View(timeout=self.timeout)
         for component_ in self.components:
@@ -285,15 +299,14 @@ class Btn3And2DropMenu:
         """
         Responsive Buttons and DropMenus
 
-        :param author: Interaction User
-        :param button1: takes button type SButton
-        :param button2: takes button type SButton
-        :param button3: takes button type SButton
-        :param menu1: takes dropmenu type SDropMenu
-        :param menu2: takes dropmenu type SDropMenu
-        :param timeout: Interaction Timeout
-
-        :returns: view: discord.ui.View
+        Args:
+            author: Interaction User
+            button1: takes button type SButton
+            button2: takes button type SButton
+            button3: takes button type SButton
+            menu1: takes dropmenu type SDropMenu
+            menu2: takes dropmenu type SDropMenu
+            timeout: Interaction Timeout
         """
 
         self.author = author
@@ -315,7 +328,10 @@ class Btn3And2DropMenu:
                                               self.menu2, timeout=self.timeout)
 
     def view(self) -> ui.View:
-        """:returns: discord.ui.View"""
+        """
+        Returns:
+             view: discord.ui.View
+        """
 
         view_ = ui.View(timeout=self.timeout)
         for component_ in self.components:
@@ -335,14 +351,13 @@ class BtnAnd3DropMenu:
         """
         Responsive Buttons and DropMenus
 
-        :param author: Interaction User
-        :param button1: takes button type SButton
-        :param menu1: takes dropmenu type SDropMenu
-        :param menu2: takes dropmenu type SDropMenu
-        :param menu3: takes dropmenu type SDropMenu
-        :param timeout: Interaction Timeout
-
-        :returns: view: discord.ui.View
+        Args:
+            author: Interaction User
+            button1: takes button type SButton
+            menu1: takes dropmenu type SDropMenu
+            menu2: takes dropmenu type SDropMenu
+            menu3: takes dropmenu type SDropMenu
+            timeout: Interaction Timeout
         """
 
         self.author = author
@@ -362,7 +377,10 @@ class BtnAnd3DropMenu:
                                              self.menu3, timeout=self.timeout)
 
     def view(self) -> ui.View:
-        """:returns: discord.ui.View"""
+        """
+        Returns:
+             view: discord.ui.View
+        """
 
         view_ = ui.View(timeout=self.timeout)
         for component_ in self.components:
@@ -382,15 +400,14 @@ class Btn2And3DropMenu:
         """
         Responsive Buttons and DropMenus
 
-        :param author: Interaction User
-        :param button1: takes button type SButton
-        :param button2: takes button type SButton
-        :param menu1: takes dropmenu type SDropMenu
-        :param menu2: takes dropmenu type SDropMenu
-        :param menu3: takes dropmenu type SDropMenu
-        :param timeout: Interaction Timeout
-
-        :returns: view: discord.ui.View
+        Args:
+            author: Interaction User
+            button1: takes button type SButton
+            button2: takes button type SButton
+            menu1: takes dropmenu type SDropMenu
+            menu2: takes dropmenu type SDropMenu
+            menu3: takes dropmenu type SDropMenu
+            timeout: Interaction Timeout
         """
 
         self.author = author
@@ -412,7 +429,10 @@ class Btn2And3DropMenu:
                                              self.menu3, timeout=self.timeout)
 
     def view(self) -> ui.View:
-        """:returns: discord.ui.View"""
+        """
+        Returns:
+             view: discord.ui.View
+        """
 
         view_ = ui.View(timeout=self.timeout)
         for component_ in self.components:
@@ -432,15 +452,14 @@ class BtnAnd4DropMenu:
         """
         Responsive Buttons and DropMenus
 
-        :param author: Interaction User
-        :param button1: takes button type SButton
-        :param menu1: takes dropmenu type SDropMenu
-        :param menu2: takes dropmenu type SDropMenu
-        :param menu3: takes dropmenu type SDropMenu
-        :param menu4: takes dropmenu type SDropMenu
-        :param timeout: Interaction Timeout
-
-        :returns: view: discord.ui.View
+        Args:
+            author: Interaction User
+            button1: takes button type SButton
+            menu1: takes dropmenu type SDropMenu
+            menu2: takes dropmenu type SDropMenu
+            menu3: takes dropmenu type SDropMenu
+            menu4: takes dropmenu type SDropMenu
+            timeout: Interaction Timeout
         """
 
         self.author = author
@@ -462,7 +481,10 @@ class BtnAnd4DropMenu:
                                              self.menu3, self.menu4, timeout=self.timeout)
 
     def view(self) -> ui.View:
-        """:returns: discord.ui.View"""
+        """
+        Returns:
+             view: discord.ui.View
+        """
 
         view_ = ui.View(timeout=self.timeout)
         for component_ in self.components:
@@ -481,12 +503,11 @@ class MultiBtnAndDropMenu:
         """
         Responsive Buttons and DropMenus
 
-        :param author: Interaction User
-        :param buttons: takes List of button type SButton
-        :param menus: takes List of dropmenu type SDropMenu
-        :param timeout: Interaction Timeout
-
-        :returns: view: discord.ui.View
+        Args:
+            author: Interaction User
+            buttons: takes List of button type SButton
+            menus: takes List of dropmenu type SDropMenu
+            timeout: Interaction Timeout
         """
 
         self.author = author
@@ -503,7 +524,10 @@ class MultiBtnAndDropMenu:
             self.author, self.btns, self.menus, timeout=self.timeout)
 
     def view(self) -> ui.View:
-        """:returns: discord.ui.View"""
+        """
+        Returns:
+             view: discord.ui.View
+        """
 
         view_ = ui.View(timeout=self.timeout)
         for btn_ in self.btns:
@@ -528,11 +552,10 @@ class MultiBtnsAndMenus:
 
         Responsive Buttons and DropMenus
 
-        :param author: Interaction User
-        :param components: Takes List of components (both buttons and drop menus)
-        :param timeout: Interaction Timeout
-
-        :returns: view: discord.ui.View
+        Args:
+            author: Interaction User
+            components: Takes List of components (both buttons and drop menus)
+            timeout: Interaction Timeout
         """
 
         self.author = author
@@ -547,7 +570,10 @@ class MultiBtnsAndMenus:
             self.author, self.components, timeout=self.timeout)
 
     def view(self) -> ui.View:
-        """:returns: discord.ui.View"""
+        """
+        Returns:
+             view: discord.ui.View
+        """
 
         view_ = ui.View(timeout=self.timeout)
         for component in self.components:
