@@ -138,7 +138,7 @@ class SButton:
         It's a property used to get label of the button
 
         Returns:
-            name: Label of the Button
+            label: Label (or) emoji of the Button
         """
 
         return self.kwargs['label'] or self.kwargs['emoji']

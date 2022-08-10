@@ -19,6 +19,12 @@ theme:
     - navigation.tabs.sticky
     - navigation.sections
 
+markdown_extensions:
+  - toc:
+      permalink: "#"
+      baselevel: 2
+      separator: "_"
+
 plugins:
   - search
   - mkdocstrings:
@@ -27,6 +33,8 @@ plugins:
       default_handler: python
       handlers:
         python:
+          selection:
+            docstring_style: google
           options:
             show_source: false
 
