@@ -7,9 +7,13 @@
 
 [![CodeQL](https://github.com/Modern-Realm/discord_btns_menus/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Modern-Realm/discord_btns_menus/actions/workflows/codeql-analysis.yml)
 [![Generic badge](https://img.shields.io/badge/Python-3.8-blue.svg)](https://www.python.org/)
-![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)
+![Github License](https://img.shields.io/badge/license-MIT-blue)
 ![Windows](https://svgshare.com/i/ZhY.svg)
 ![Linux](https://svgshare.com/i/Zhy.svg)
+
+[![GitHub stars](https://img.shields.io/github/stars/Modern-Realm/discord_btns_menus?color=gold)](https://github.com/Modern-Realm/discord_btns_menus/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Modern-Realm/discord_btns_menus?color=%2332cd32)](https://github.com/Modern-Realm/discord_btns_menus/network)
+[![GitHub issues](https://img.shields.io/github/issues/Modern-Realm/discord_btns_menus?color=orange)](https://github.com/Modern-Realm/discord_btns_menus/issues)
 
 #### Join [Official Discord Server](https://discord.gg/GVMWx5EaAN  "click to Join") for more guidance !
 
