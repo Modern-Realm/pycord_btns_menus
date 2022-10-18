@@ -8,8 +8,8 @@
 [![CodeQL](https://github.com/Modern-Realm/discord_btns_menus/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Modern-Realm/discord_btns_menus/actions/workflows/codeql-analysis.yml)
 [![Generic badge](https://img.shields.io/badge/Python-3.8-blue.svg)](https://www.python.org/)
 ![Github License](https://img.shields.io/badge/license-MIT-blue)
-![Windows](https://svgshare.com/i/ZhY.svg)
-![Linux](https://svgshare.com/i/Zhy.svg)
+![Windows](https://img.shields.io/badge/os-windows-yellow)
+![Linux](https://img.shields.io/badge/os-linux-yellow)
 
 [![GitHub stars](https://img.shields.io/github/stars/Modern-Realm/discord_btns_menus?color=gold)](https://github.com/Modern-Realm/discord_btns_menus/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/Modern-Realm/discord_btns_menus?color=%2332cd32)](https://github.com/Modern-Realm/discord_btns_menus/network)
