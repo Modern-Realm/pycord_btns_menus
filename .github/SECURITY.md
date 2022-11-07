@@ -4,9 +4,9 @@
 
 | Version |     Supported      |   Status    |
 |:-------:|:------------------:|:-----------:|
-|  0.2.3  | :white_check_mark: |   Latest    |
-|  0.2.2  | :white_check_mark: |   Stable    |
-| < 0.1.2 |        :x:         |  Out Dated  |
+|  0.2.4  | :white_check_mark: |   Latest    |
+|  0.2.3  | :white_check_mark: |   Stable    |
+| < 0.2.0 |        :x:         |  Out Dated  |
 
 Note: Requires one of the 
 **[dependencies](https://github.com/Modern-Realm/discord_btns_menus#required-dependencies)**
