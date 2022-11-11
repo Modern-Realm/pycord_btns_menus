@@ -175,7 +175,7 @@ class Paginator:
                                    rewrite=True) if self.cmds_menu is None else self.cmds_menu
 
         em = self.embeds[0]
-        if len(em.footer.text) == 0 and self.footer is not None:
+        if self.footer is not None and len(em.footer.text) == 0:
             em.set_footer(text=self.footer_for_PG(self.footer))
         self.home_btn.update(response=em, rewrite=True)
 
@@ -236,7 +236,7 @@ class Paginator:
             self.skip_Tolast.update(disabled=False)
 
             em = self.embeds[self.pages]
-            if len(em.footer.text) == 0 and self.footer is not None:
+            if self.footer is not None and len(em.footer.text) == 0:
                 em.set_footer(text=self.footer_for_PG(self.footer))
             self.backward_btn.update_one(em, "response")
 
