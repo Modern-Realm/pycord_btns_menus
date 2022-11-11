@@ -213,7 +213,7 @@ class Paginator:
             self.home_btn.update(disabled=False)
 
             em = self.embeds[self.pages]
-            if len(em.footer.text) == 0 and self.footer is not None:
+            if self.footer is not None and len(em.footer.text) == 0:
                 em.set_footer(text=self.footer_for_PG(self.footer))
             self.forward_btn.update_one(em, "response")
 
