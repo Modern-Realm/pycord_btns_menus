@@ -234,8 +234,6 @@ class Paginator:
             self.skip_Tolast.update(disabled=False)
 
             em = self.embeds[self.pages]
-            if len(em.footer.text) == 0 and self.footer is not None:
-                em.set_footer(text=self.footer_for_PG(self.footer))
             self.backward_btn.update_one(em, "response")
 
         async def skip_to_first_pg():
