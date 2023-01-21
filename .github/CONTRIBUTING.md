@@ -59,25 +59,25 @@ You can get support/help/guidance from below social-media links
 
 <p style="margin-left: 20px;">
 
-<img src="https://github.com/Modern-Realm/pycord_btns_menus/blob/main/media/bin/github_icon.png" alt="icon" width="18" height="18">
+<img src="https://github.com/Modern-Realm/discord_btns_menus/blob/main/media/bin/github_icon.png" alt="icon" width="18" height="18">
 <a href="https://github.com/Modern-Realm"> 
 Home Page </a>
 
 <br/>
 
-<img src="https://github.com/Modern-Realm/pycord_btns_menus/blob/main/media/bin/discord_icon.png" alt="icon" width="18" height="18">
+<img src="https://github.com/Modern-Realm/discord_btns_menus/blob/main/media/bin/discord_icon.png" alt="icon" width="18" height="18">
 <a href="https://discord.gg/GVMWx5EaAN"> 
 Official Discord Server </a>
 
 <br/>
 
-<img src="https://github.com/Modern-Realm/pycord_btns_menus/blob/main/media/bin/PyPi_icon.png" alt="icon" width="18" height="18">
+<img src="https://github.com/Modern-Realm/discord_btns_menus/blob/main/media/bin/PyPi_icon.png" alt="icon" width="18" height="18">
 <a href="https://pypi.org/project/discord-btns-menus/"> 
 PyPi Package </a>
 
 <br/>
 
-<img src="https://github.com/Modern-Realm/pycord_btns_menus/blob/main/media/bin/docs_icon.png" alt="icon" width="18" height="18">
+<img src="https://github.com/Modern-Realm/discord_btns_menus/blob/main/media/bin/docs_icon.png" alt="icon" width="18" height="18">
 <a href="https://skrphenix.github.io/pycord_btns_menus/"> 
 Documentation </a>
 
@@ -88,11 +88,11 @@ Documentation </a>
 ## Direct Links for <u>Contributors</u>
 
 <p style="margin-left: 20px;">
-   <img src="https://github.com/Modern-Realm/pycord_btns_menus/blob/main/media/bin/github_icon.png" alt="icon" width="18" height="18"> 
-   <a href="https://github.com/Modern-Realm/pycord_btns_menus/issues/new/choose"> 
+   <img src="https://github.com/Modern-Realm/discord_btns_menus/blob/main/media/bin/github_icon.png" alt="icon" width="18" height="18"> 
+   <a href="https://github.com/Modern-Realm/discord_btns_menus/issues/new/choose"> 
    Open Issue /</a>
    
-   <a href="https://github.com/Modern-Realm/pycord_btns_menus/pulls">
+   <a href="https://github.com/Modern-Realm/discord_btns_menus/pulls">
    Pull Requests
    </a>
 
