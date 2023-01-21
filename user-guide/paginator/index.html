@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="skrphenix" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Paginator - discord-btns-menus</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Paginator";
+        var mkdocs_page_input_path = "user-guide/paginator.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/python.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> discord-btns-menus
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../installation/">Installation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../getting-started/">Getting Started</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../buttons/">Buttons</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../dropmenus/">DropMenus</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../combinations/">Combinations</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Paginator</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.Paginator">btns_menus.Paginator</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.Paginator.Paginator">Paginator</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#btns_menus.Paginator.Paginator.__init__">__init__()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#btns_menus.Paginator.Paginator.__init__--custom_ids_for_buttons">Custom IDs for Buttons:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#btns_menus.Paginator.Paginator.__init__--custom_ids_for_menu">Custom IDs for Menu:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#btns_menus.Paginator.Paginator.view">view()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.Paginator.PgTypes">PgTypes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#btns_menus.Paginator.PgTypes--available_types">Available Types</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#btns_menus.Paginator.PgTypes--example">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.Paginator.SOption">SOption()</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../errors/">Errors</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">About</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../about/CODE_OF_CONDUCT/">Code Of Conduct</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../about/CONTRIBUTING/">Contributing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../about/LICENSE/">License</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">discord-btns-menus</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>User Guide &raquo;</li>
+      <li>Paginator</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="paginators">Paginators<a class="headerlink" href="#paginators" title="Permanent link">#</a></h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+<a id="btns_menus.Paginator"></a>
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="btns_menus.Paginator.Paginator" class="doc doc-heading">
+        <code>Paginator</code>
+
+
+<a href="#btns_menus.Paginator.Paginator" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="btns_menus.Paginator.Paginator.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="n">embeds</span><span class="p">,</span> <span class="n">commands_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pg_type</span><span class="o">=</span><span class="n">PgTypes</span><span class="o">.</span><span class="n">first</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">buttons</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">menus</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">append_before</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">footer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">DEFAULT_TIMEOUT</span><span class="p">)</span></code>
+
+<a href="#btns_menus.Paginator.Paginator.__init__" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Paginator is used to show users the given embeds in pages format using <strong>navigation Buttons and DropMenus</strong></p>
+<h5 id="btns_menus.Paginator.Paginator.__init__--custom_ids_for_buttons">Custom IDs for Buttons:<a class="headerlink" href="#btns_menus.Paginator.Paginator.__init__--custom_ids_for_buttons" title="Permanent link">#</a></h5>
+<pre><code>home, forward, backward, skip_Tofirst, skip_Tolast, delete
+</code></pre>
+<h5 id="btns_menus.Paginator.Paginator.__init__--custom_ids_for_menu">Custom IDs for Menu:<a class="headerlink" href="#btns_menus.Paginator.Paginator.__init__--custom_ids_for_menu" title="Permanent link">#</a></h5>
+<pre><code>commands-list, cmds-list
+</code></pre>
+<p><strong>Note:</strong> These ID's can be used to modify the buttons/menus in the Paginator</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>author</code></td>
+          <td>
+                <code>discord.<span title="discord.Member">Member</span></code>
+          </td>
+          <td><p>User who will interact with the Paginator</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>embeds</code></td>
+          <td>
+                <code><span title="typing.List">List</span>[discord.<span title="discord.Embed">Embed</span>]</code>
+          </td>
+          <td><p>The list of embeds that acts as Pages</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>commands_list</code></td>
+          <td>
+                <code><span title="typing.List">List</span>[<a class="autorefs autorefs-internal" title="btns_menus.Paginator.SOption" href="#btns_menus.Paginator.SOption">SOption</a>]</code>
+          </td>
+          <td><p>The list of options which are shown as options in a Drop Menu</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>pg_type</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="btns_menus.Paginator.PgTypes" href="#btns_menus.Paginator.PgTypes">PgTypes</a></code>
+          </td>
+          <td><p>Takes the PgTypes</p></td>
+          <td>
+                <code>PgTypes.first</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>buttons</code></td>
+          <td>
+                <code><span title="typing.List">List</span>[<a class="autorefs autorefs-internal" title="btns_menus.Buttons.SButton" href="../buttons/#btns_menus.Buttons.SButton">SButton</a>]</code>
+          </td>
+          <td><p>List of buttons used to navigate of interact with the pages/embeds</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>menus</code></td>
+          <td>
+                <code><span title="typing.List">List</span>[<a class="autorefs autorefs-internal" title="btns_menus.DropMenus.SDropMenu" href="../dropmenus/#btns_menus.DropMenus.SDropMenu">SDropMenu</a>]</code>
+          </td>
+          <td><p>List of Menus used to make a user select options from it</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>append_before</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>If true, buttons &amp; menus will be added before default buttons &amp; menus in Paginator and vice-versa</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>footer</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Used to add content into text in footer of discord.Embed</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>timeout</code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[<span title="typing.Union">Union</span>[int, float]]</code>
+          </td>
+          <td><p>Timeout of the interaction</p></td>
+          <td>
+                <code>DEFAULT_TIMEOUT</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="btns_menus.Paginator.Paginator.view" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">view</span><span class="p">()</span></code>
+
+<a href="#btns_menus.Paginator.Paginator.view" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>view</code></td>          <td>
+                <code><span title="discord.ui">ui</span>.<span title="discord.ui.View">View</span></code>
+          </td>
+          <td><p>discord.ui.View</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="btns_menus.Paginator.PgTypes" class="doc doc-heading">
+        <code>PgTypes</code>
+
+
+<a href="#btns_menus.Paginator.PgTypes" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>enums used to define the type of paginator you want to use</p>
+<h6 id="btns_menus.Paginator.PgTypes--available_types">Available Types<a class="headerlink" href="#btns_menus.Paginator.PgTypes--available_types" title="Permanent link">#</a></h6>
+<ul>
+<li>first/ one</li>
+<li>second/ two</li>
+<li>third/ three</li>
+</ul>
+<h6 id="btns_menus.Paginator.PgTypes--example">Example<a class="headerlink" href="#btns_menus.Paginator.PgTypes--example" title="Permanent link">#</a></h6>
+<pre><code class="language-python">pg_type = PgTypes.first
+</code></pre>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="btns_menus.Paginator.SOption" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">SOption</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">embed</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">emoji</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#btns_menus.Paginator.SOption" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>It's a decorator used to overwrite options in <code>discord.ui.Select</code></p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>label for option</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>embed</code></td>
+          <td>
+                <code>discord.<span title="discord.Embed">Embed</span></code>
+          </td>
+          <td><p>If option is selected, the embed will be sent !</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>description</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Description for the option</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>emoji</code></td>
+          <td>
+                <code><span title="typing.Union">Union</span>[str, discord.<span title="discord.Emoji">Emoji</span>, discord.<span title="discord.PartialEmoji">PartialEmoji</span>]</code>
+          </td>
+          <td><p>Emoji for the option</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>decorator</code></td>          <td>
+                <code><span title="typing.Dict">Dict</span></code>
+          </td>
+          <td><p>Dictionary of options</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../combinations/" class="btn btn-neutral float-left" title="Combinations"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../errors/" class="btn btn-neutral float-right" title="Errors">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright (c) 2021 skrphenix</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Modern-Realm/discord_btns_menus" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../combinations/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../errors/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

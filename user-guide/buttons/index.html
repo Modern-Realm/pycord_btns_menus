@@ -1,0 +1,2280 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="skrphenix" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Buttons - discord-btns-menus</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Buttons";
+        var mkdocs_page_input_path = "user-guide/buttons.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/django.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/python.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> discord-btns-menus
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../installation/">Installation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../getting-started/">Getting Started</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Buttons</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#sbutton">SButton</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.Buttons.SButton">btns_menus.Buttons.SButton</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.builds.button_.SButton.after_resp">after_resp</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.builds.button_.SButton.args">args</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.builds.button_.SButton.author">author</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.builds.button_.SButton.hidden">hidden</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.builds.button_.SButton.id">id</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.builds.button_.SButton.is_ephemeral">is_ephemeral</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.builds.button_.SButton.name">name</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.builds.button_.SButton.__init__">__init__()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.builds.button_.SButton.add_coro_func">add_coro_func()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.builds.button_.SButton.add_func">add_func()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.builds.button_.SButton.after_response">after_response()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.builds.button_.SButton.has_any_role">has_any_role()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.builds.button_.SButton.has_permissions">has_permissions()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.builds.button_.SButton.has_roles">has_roles()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.builds.button_.SButton.is_any_user">is_any_user()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.builds.button_.SButton.is_author">is_author()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.builds.button_.SButton.is_owner">is_owner()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.builds.button_.SButton.update">update()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.builds.button_.SButton.update_one">update_one()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#types_of_buttons">Types of Buttons</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.Buttons">btns_menus.Buttons</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.Buttons.DuoButton">DuoButton</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#btns_menus.Buttons.DuoButton.__init__">__init__()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#btns_menus.Buttons.DuoButton.view">view()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.Buttons.MultiButton">MultiButton</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#btns_menus.Buttons.MultiButton.__init__">__init__()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#btns_menus.Buttons.MultiButton.view">view()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.Buttons.QuartetButton">QuartetButton</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#btns_menus.Buttons.QuartetButton.__init__">__init__()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#btns_menus.Buttons.QuartetButton.view">view()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.Buttons.QuintetButton">QuintetButton</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#btns_menus.Buttons.QuintetButton.__init__">__init__()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#btns_menus.Buttons.QuintetButton.view">view()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.Buttons.SingleButton">SingleButton</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#btns_menus.Buttons.SingleButton.__init__">__init__()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#btns_menus.Buttons.SingleButton.view">view()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#btns_menus.Buttons.TrioButton">TrioButton</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#btns_menus.Buttons.TrioButton.__init__">__init__()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#btns_menus.Buttons.TrioButton.view">view()</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../dropmenus/">DropMenus</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../combinations/">Combinations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../paginator/">Paginator</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../errors/">Errors</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">About</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../about/CODE_OF_CONDUCT/">Code Of Conduct</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../about/CONTRIBUTING/">Contributing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../about/LICENSE/">License</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">discord-btns-menus</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>User Guide &raquo;</li>
+      <li>Buttons</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="buttons">Buttons<a class="headerlink" href="#buttons" title="Permanent link">#</a></h2>
+<h3 id="sbutton">SButton<a class="headerlink" href="#sbutton" title="Permanent link">#</a></h3>
+
+
+<div class="doc doc-object doc-class">
+
+
+<a id="btns_menus.Buttons.SButton"></a>
+  <div class="doc doc-contents first">
+
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="btns_menus.builds.button_.SButton.after_resp" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">after_resp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#btns_menus.builds.button_.SButton.after_resp" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>It's a property used to get a dictionary of options which are to be changed after button click</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>UpdatedOptions</code></td>          <td>
+                <code>Optional[Dict]</code>
+          </td>
+          <td><p>Dict if there is a query defined or else returns None</p></td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="btns_menus.builds.button_.SButton.args" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">args</span><span class="p">:</span> <span class="n">Dict</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#btns_menus.builds.button_.SButton.args" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>It's a property used to get kwargs of the button</p>
+<ul>
+<li>Aliases: ['args', 'kwargs']</li>
+</ul>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>Options</code></td>          <td>
+                <code>Dict</code>
+          </td>
+          <td><p>Dictionary of options of a Button</p></td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="btns_menus.builds.button_.SButton.author" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">author</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">discord</span><span class="o">.</span><span class="n">Member</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#btns_menus.builds.button_.SButton.author" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>It's a property used to get author of the button</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>author</code></td>          <td>
+                <code>Optional[discord.<span title="discord.Member">Member</span>]</code>
+          </td>
+          <td><p>returns a user obj if one exists</p></td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="btns_menus.builds.button_.SButton.hidden" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">hidden</span><span class="p">:</span> <span class="nb">bool</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#btns_menus.builds.button_.SButton.hidden" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>It's a property used to get hidden parm of the button</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>hidden</code></td>          <td>
+                <code>bool</code>
+          </td>
+          <td></td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="btns_menus.builds.button_.SButton.id" class="doc doc-heading">
+<code class="highlight language-python"><span class="nb">id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#btns_menus.builds.button_.SButton.id" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>It's a property used to get ID of the button</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>custom_id</code></td>          <td>
+                <code>Optional[str]</code>
+          </td>
+          <td><p>Button ID</p></td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="btns_menus.builds.button_.SButton.is_ephemeral" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">is_ephemeral</span><span class="p">:</span> <span class="nb">bool</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#btns_menus.builds.button_.SButton.is_ephemeral" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>It's a property used to check whether it's ephemeral or not</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>ephemeral</code></td>          <td>
+                <code>bool</code>
+          </td>
+          <td><p>true, if the button response type is ephemeral or else false</p></td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="btns_menus.builds.button_.SButton.name" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#btns_menus.builds.button_.SButton.name" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>It's a property used to get label of the button</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>label</code></td>          <td>
+                <code>Optional[str]</code>
+          </td>
+          <td><p>Label (or) emoji of the Button</p></td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="btns_menus.builds.button_.SButton.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">custom_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">ButtonStyle</span><span class="o">.</span><span class="n">secondary</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">emoji</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">response</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rewrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ephemeral</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">delete_msg</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">hidden</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">author</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+<a href="#btns_menus.builds.button_.SButton.__init__" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>It is a decorator used to create a <strong>Button</strong> overwriting ui.Button</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>label</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Label of the Button</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>custom_id</code></td>
+          <td>
+                <code>Optional[str]</code>
+          </td>
+          <td><p>Unique ID of the Button</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>disabled</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>It is used to enable/disable the Button, i.e. Preventing user from using it</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>style</code></td>
+          <td>
+                <code><span title="discord.ButtonStyle">ButtonStyle</span></code>
+          </td>
+          <td><p>Color of the Button</p></td>
+          <td>
+                <code>ButtonStyle.secondary</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>url</code></td>
+          <td>
+                <code>Optional[str]</code>
+          </td>
+          <td><p>Onclick Redirects to the given url</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>emoji</code></td>
+          <td>
+                <code>Optional[Union[str, discord.<span title="discord.Emoji">Emoji</span>, discord.<span title="discord.PartialEmoji">PartialEmoji</span>]]</code>
+          </td>
+          <td><p>Emoji for the Button</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>row</code></td>
+          <td>
+                <code>Optional[int]</code>
+          </td>
+          <td><p>Places the Button in given Row</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>content</code></td>
+          <td>
+                <code>Optional[str]</code>
+          </td>
+          <td><p>content of the message</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>response</code></td>
+          <td>
+                <code>Optional[Union[str, discord.<span title="discord.Embed">Embed</span>]]</code>
+          </td>
+          <td><p>Sends the message (str/ embed) in user channel</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>rewrite</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>It is used to send the message by editing the original message rather than sending a new one</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>ephemeral</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>It is used to send the message where it's only visible to interacted user or to all</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>delete_msg</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>Deletes the original message</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>hidden</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>It hides the Button from View</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>author</code></td>
+          <td>
+                <code>discord.<span title="discord.Member">Member</span></code>
+          </td>
+          <td><p>Interaction User</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>verify</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>It is used to make the func to check for author parameter or not</p></td>
+          <td>
+                <code>True</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="btns_menus.builds.button_.SButton.add_coro_func" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add_coro_func</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+<a href="#btns_menus.builds.button_.SButton.add_coro_func" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>It's an asynchronous function which stores same function type
+and adds the func to button for execution after getting clicked</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>function</code></td>
+          <td>
+                <code><span title="btns_menus.builds.abc.Callable">Callable</span></code>
+          </td>
+          <td><p>takes asynchronous function</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>*args</code></td>
+          <td>
+                <code><span title="btns_menus.builds.abc.Any">Any</span></code>
+          </td>
+          <td><p>takes args of the function provided by a user</p></td>
+          <td>
+                <code>()</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>**kwargs</code></td>
+          <td>
+                <code><span title="btns_menus.builds.abc.Any">Any</span></code>
+          </td>
+          <td><p>takes kwargs of the function provided by a user</p></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="btns_menus.builds.button_.SButton.add_func" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add_func</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#btns_menus.builds.button_.SButton.add_func" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>It's a function which stores same function type and adds the func to button for execution after getting clicked</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>function</code></td>
+          <td>
+                <code><span title="btns_menus.builds.abc.Callable">Callable</span></code>
+          </td>
+          <td><p>takes a function</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>*args</code></td>
+          <td>
+                <code><span title="btns_menus.builds.abc.Any">Any</span></code>
+          </td>
+          <td><p>takes args of the function provided by a user</p></td>
+          <td>
+                <code>()</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>**kwargs</code></td>
+          <td>
+                <code><span title="btns_menus.builds.abc.Any">Any</span></code>
+          </td>
+          <td><p>takes kwargs of the function provided by a user</p></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="btns_menus.builds.button_.SButton.after_response" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">after_response</span><span class="p">(</span><span class="o">**</span><span class="n">options</span><span class="p">)</span></code>
+
+<a href="#btns_menus.builds.button_.SButton.after_response" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>It's an event type function which changes the provided options after button ( onclick )</p>
+<p>options are same as those in <code>SButton</code></p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>**options</code></td>
+          <td>
+                <code><span title="btns_menus.builds.abc.Any">Any</span></code>
+          </td>
+          <td><p>takes Button options</p></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="btns_menus.errors.ButtonException" href="../errors/#btns_menus.errors.ButtonException">ButtonException</a></code>
+          </td>
+          <td><p>raises the exception if the option is invalid</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="btns_menus.builds.button_.SButton.has_any_role" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">has_any_role</span><span class="p">(</span><span class="o">*</span><span class="n">roles</span><span class="p">,</span> <span class="n">error_msg</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#btns_menus.builds.button_.SButton.has_any_role" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>It's used to check whether the interaction user has any one of the mentioned roles of interaction guild</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>*roles</code></td>
+          <td>
+                <code>Union[int, str]</code>
+          </td>
+          <td><p>Takes either ID's or Name's of the roles of interaction guild</p></td>
+          <td>
+                <code>()</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>error_msg</code></td>
+          <td>
+                <code>Union[str, discord.<span title="discord.Embed">Embed</span>]</code>
+          </td>
+          <td><p>Sends a message to the user (Interaction.User) if the condition not satisfies</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="btns_menus.builds.button_.SButton.has_permissions" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">has_permissions</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">error_msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">perms</span><span class="p">)</span></code>
+
+<a href="#btns_menus.builds.button_.SButton.has_permissions" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>It's used to check whether the interaction user has the mentioned permissions of the interaction guild/ channel</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>error_msg</code></td>
+          <td>
+                <code>Union[str, discord.<span title="discord.Embed">Embed</span>]</code>
+          </td>
+          <td><p>Sends a message to the interaction user if the condition not satisfies</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>**perms</code></td>
+          <td>
+                <code><span title="btns_menus.builds.abc.Any">Any</span></code>
+          </td>
+          <td><p>Takes the permissions flags <code>(discord.Permissions.VALID_FLAGS)</code></p></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="btns_menus.builds.button_.SButton.has_roles" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">has_roles</span><span class="p">(</span><span class="o">*</span><span class="n">roles</span><span class="p">,</span> <span class="n">error_msg</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#btns_menus.builds.button_.SButton.has_roles" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>It's used to check whether the interaction user has the mentioned roles of interaction guild</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>*roles</code></td>
+          <td>
+                <code>Union[int, str]</code>
+          </td>
+          <td><p>Takes either ID's or Name's of the roles of interaction guild</p></td>
+          <td>
+                <code>()</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>error_msg</code></td>
+          <td>
+                <code>Union[str, discord.<span title="discord.Embed">Embed</span>]</code>
+          </td>
+          <td><p>Sends a message to the user (Interaction.User) if the condition not satisfies</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="btns_menus.builds.button_.SButton.is_any_user" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">is_any_user</span><span class="p">(</span><span class="o">*</span><span class="n">users</span><span class="p">,</span> <span class="n">error_msg</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#btns_menus.builds.button_.SButton.is_any_user" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>It's used to check whether the interaction user is in mentioned users or not</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>*users</code></td>
+          <td>
+                <code>Union[str, int]</code>
+          </td>
+          <td><p>Takes either ID's or Name's of the members of interaction guild</p></td>
+          <td>
+                <code>()</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>error_msg</code></td>
+          <td>
+                <code>Union[str, discord.<span title="discord.Embed">Embed</span>]</code>
+          </td>
+          <td><p>Sends a message to the interaction user if the condition not satisfies</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="btns_menus.builds.button_.SButton.is_author" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">is_author</span><span class="p">(</span><span class="n">error_msg</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#btns_menus.builds.button_.SButton.is_author" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>It's used to check whether the <code>Interaction.user</code> and <code>SButton.author</code> are same or not</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>error_msg</code></td>
+          <td>
+                <code>Union[str, discord.<span title="discord.Embed">Embed</span>]</code>
+          </td>
+          <td><p>Sends a message to the interaction user if the condition not satisfies</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="btns_menus.builds.button_.SButton.is_owner" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">is_owner</span><span class="p">(</span><span class="n">error_msg</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#btns_menus.builds.button_.SButton.is_owner" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>It's used to check whether the interaction user is the owner of interaction guild</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>error_msg</code></td>
+          <td>
+                <code>Union[str, discord.<span title="discord.Embed">Embed</span>]</code>
+          </td>
+          <td><p>Sends a message to the user (Interaction.User) if the condition not satisfies</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="btns_menus.builds.button_.SButton.update" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">options</span><span class="p">)</span></code>
+
+<a href="#btns_menus.builds.button_.SButton.update" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Updates the options of the <strong>Button</strong></p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>**options</code></td>
+          <td>
+                <code><span title="btns_menus.builds.abc.Any">Any</span></code>
+          </td>
+          <td><p>takes Button options</p></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="btns_menus.errors.ButtonException" href="../errors/#btns_menus.errors.ButtonException">ButtonException</a></code>
+          </td>
+          <td><p>raises the exception if the option is invalid</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="btns_menus.builds.button_.SButton.update_one" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">update_one</span><span class="p">(</span><span class="n">details</span><span class="p">,</span> <span class="n">option</span><span class="p">)</span></code>
+
+<a href="#btns_menus.builds.button_.SButton.update_one" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Updates the option of the <strong>Button</strong></p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>details</code></td>
+          <td>
+                <code><span title="btns_menus.builds.abc.Any">Any</span></code>
+          </td>
+          <td><p>Takes any datatype for updating</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>option</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>The option which should be overwritten</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="btns_menus.errors.ButtonException" href="../errors/#btns_menus.errors.ButtonException">ButtonException</a></code>
+          </td>
+          <td><p>raises the exception if the option is invalid</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div><h3 id="types_of_buttons">Types of Buttons<a class="headerlink" href="#types_of_buttons" title="Permanent link">#</a></h3>
+<p>here are some <a href="">examples</a></p>
+
+
+<div class="doc doc-object doc-module">
+
+
+<a id="btns_menus.Buttons"></a>
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="btns_menus.Buttons.DuoButton" class="doc doc-heading">
+        <code>DuoButton</code>
+
+
+<a href="#btns_menus.Buttons.DuoButton" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="btns_menus.Buttons.DuoButton.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="n">button1</span><span class="p">,</span> <span class="n">button2</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">DEFAULT_TIMEOUT</span><span class="p">)</span></code>
+
+<a href="#btns_menus.Buttons.DuoButton.__init__" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Responsive Buttons</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>author</code></td>
+          <td>
+                <code>discord.<span title="discord.Member">Member</span></code>
+          </td>
+          <td><p>Interaction User</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>button1</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="btns_menus.builds.button_.SButton" href="#btns_menus.Buttons.SButton">SButton</a></code>
+          </td>
+          <td><p>Takes Button Type SButton</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>button2</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="btns_menus.builds.button_.SButton" href="#btns_menus.Buttons.SButton">SButton</a></code>
+          </td>
+          <td><p>Takes Button Type SButton</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>timeout</code></td>
+          <td>
+                <code>Optional[float]</code>
+          </td>
+          <td><p>Interaction Timeout</p></td>
+          <td>
+                <code>DEFAULT_TIMEOUT</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="btns_menus.Buttons.DuoButton.view" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">view</span><span class="p">()</span></code>
+
+<a href="#btns_menus.Buttons.DuoButton.view" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>view</code></td>          <td>
+                <code><span title="discord.ui">ui</span>.<span title="discord.ui.View">View</span></code>
+          </td>
+          <td><p>discord.ui.View</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="btns_menus.Buttons.MultiButton" class="doc doc-heading">
+        <code>MultiButton</code>
+
+
+<a href="#btns_menus.Buttons.MultiButton" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="btns_menus.Buttons.MultiButton.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="n">buttons</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">DEFAULT_TIMEOUT</span><span class="p">)</span></code>
+
+<a href="#btns_menus.Buttons.MultiButton.__init__" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Responsive Buttons</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>author</code></td>
+          <td>
+                <code>discord.<span title="discord.Member">Member</span></code>
+          </td>
+          <td><p>Interaction User</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>buttons</code></td>
+          <td>
+                <code>List[<a class="autorefs autorefs-internal" title="btns_menus.builds.button_.SButton" href="#btns_menus.Buttons.SButton">SButton</a>]</code>
+          </td>
+          <td><p>Takes Button Type SButton</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>timeout</code></td>
+          <td>
+                <code>Optional[float]</code>
+          </td>
+          <td><p>Interaction Timeout</p></td>
+          <td>
+                <code>DEFAULT_TIMEOUT</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="btns_menus.Buttons.MultiButton.view" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">view</span><span class="p">()</span></code>
+
+<a href="#btns_menus.Buttons.MultiButton.view" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>view</code></td>          <td>
+                <code><span title="discord.ui">ui</span>.<span title="discord.ui.View">View</span></code>
+          </td>
+          <td><p>discord.ui.View</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="btns_menus.Buttons.QuartetButton" class="doc doc-heading">
+        <code>QuartetButton</code>
+
+
+<a href="#btns_menus.Buttons.QuartetButton" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="btns_menus.Buttons.QuartetButton.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="n">button1</span><span class="p">,</span> <span class="n">button2</span><span class="p">,</span> <span class="n">button3</span><span class="p">,</span> <span class="n">button4</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">DEFAULT_TIMEOUT</span><span class="p">)</span></code>
+
+<a href="#btns_menus.Buttons.QuartetButton.__init__" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Responsive Buttons</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>author</code></td>
+          <td>
+                <code>discord.<span title="discord.Member">Member</span></code>
+          </td>
+          <td><p>Interaction User</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>button1</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="btns_menus.builds.button_.SButton" href="#btns_menus.Buttons.SButton">SButton</a></code>
+          </td>
+          <td><p>Takes Button Type SButton</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>button2</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="btns_menus.builds.button_.SButton" href="#btns_menus.Buttons.SButton">SButton</a></code>
+          </td>
+          <td><p>Takes Button Type SButton</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>button3</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="btns_menus.builds.button_.SButton" href="#btns_menus.Buttons.SButton">SButton</a></code>
+          </td>
+          <td><p>Takes Button Type SButton</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>button4</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="btns_menus.builds.button_.SButton" href="#btns_menus.Buttons.SButton">SButton</a></code>
+          </td>
+          <td><p>Takes Button Type SButton</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>timeout</code></td>
+          <td>
+                <code>Optional[float]</code>
+          </td>
+          <td><p>Interaction Timeout</p></td>
+          <td>
+                <code>DEFAULT_TIMEOUT</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="btns_menus.Buttons.QuartetButton.view" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">view</span><span class="p">()</span></code>
+
+<a href="#btns_menus.Buttons.QuartetButton.view" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>view</code></td>          <td>
+                <code><span title="discord.ui">ui</span>.<span title="discord.ui.View">View</span></code>
+          </td>
+          <td><p>discord.ui.View</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="btns_menus.Buttons.QuintetButton" class="doc doc-heading">
+        <code>QuintetButton</code>
+
+
+<a href="#btns_menus.Buttons.QuintetButton" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="btns_menus.Buttons.QuintetButton.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="n">button1</span><span class="p">,</span> <span class="n">button2</span><span class="p">,</span> <span class="n">button3</span><span class="p">,</span> <span class="n">button4</span><span class="p">,</span> <span class="n">button5</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">DEFAULT_TIMEOUT</span><span class="p">)</span></code>
+
+<a href="#btns_menus.Buttons.QuintetButton.__init__" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Responsive Buttons</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>author</code></td>
+          <td>
+                <code>discord.<span title="discord.Member">Member</span></code>
+          </td>
+          <td><p>Interaction User</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>button1</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="btns_menus.builds.button_.SButton" href="#btns_menus.Buttons.SButton">SButton</a></code>
+          </td>
+          <td><p>Takes Button Type SButton</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>button2</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="btns_menus.builds.button_.SButton" href="#btns_menus.Buttons.SButton">SButton</a></code>
+          </td>
+          <td><p>Takes Button Type SButton</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>button3</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="btns_menus.builds.button_.SButton" href="#btns_menus.Buttons.SButton">SButton</a></code>
+          </td>
+          <td><p>Takes Button Type SButton</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>button4</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="btns_menus.builds.button_.SButton" href="#btns_menus.Buttons.SButton">SButton</a></code>
+          </td>
+          <td><p>Takes Button Type SButton</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>button5</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="btns_menus.builds.button_.SButton" href="#btns_menus.Buttons.SButton">SButton</a></code>
+          </td>
+          <td><p>Takes Button Type SButton</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>timeout</code></td>
+          <td>
+                <code>Optional[float]</code>
+          </td>
+          <td><p>Interaction Timeout</p></td>
+          <td>
+                <code>DEFAULT_TIMEOUT</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="btns_menus.Buttons.QuintetButton.view" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">view</span><span class="p">()</span></code>
+
+<a href="#btns_menus.Buttons.QuintetButton.view" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>view</code></td>          <td>
+                <code><span title="discord.ui">ui</span>.<span title="discord.ui.View">View</span></code>
+          </td>
+          <td><p>discord.ui.View</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="btns_menus.Buttons.SingleButton" class="doc doc-heading">
+        <code>SingleButton</code>
+
+
+<a href="#btns_menus.Buttons.SingleButton" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="btns_menus.Buttons.SingleButton.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="n">button1</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">DEFAULT_TIMEOUT</span><span class="p">)</span></code>
+
+<a href="#btns_menus.Buttons.SingleButton.__init__" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Responsive Button</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>author</code></td>
+          <td>
+                <code>discord.<span title="discord.Member">Member</span></code>
+          </td>
+          <td><p>Interaction User</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>button1</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="btns_menus.builds.button_.SButton" href="#btns_menus.Buttons.SButton">SButton</a></code>
+          </td>
+          <td><p>Takes Button Type SButton</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>timeout</code></td>
+          <td>
+                <code>Optional[float]</code>
+          </td>
+          <td><p>Interaction Timeout</p></td>
+          <td>
+                <code>DEFAULT_TIMEOUT</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="btns_menus.Buttons.SingleButton.view" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">view</span><span class="p">()</span></code>
+
+<a href="#btns_menus.Buttons.SingleButton.view" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>view</code></td>          <td>
+                <code><span title="discord.ui">ui</span>.<span title="discord.ui.View">View</span></code>
+          </td>
+          <td><p>discord.ui.View</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="btns_menus.Buttons.TrioButton" class="doc doc-heading">
+        <code>TrioButton</code>
+
+
+<a href="#btns_menus.Buttons.TrioButton" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="btns_menus.Buttons.TrioButton.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="n">button1</span><span class="p">,</span> <span class="n">button2</span><span class="p">,</span> <span class="n">button3</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">DEFAULT_TIMEOUT</span><span class="p">)</span></code>
+
+<a href="#btns_menus.Buttons.TrioButton.__init__" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Responsive Buttons</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>author</code></td>
+          <td>
+                <code>discord.<span title="discord.Member">Member</span></code>
+          </td>
+          <td><p>Interaction User</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>button1</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="btns_menus.builds.button_.SButton" href="#btns_menus.Buttons.SButton">SButton</a></code>
+          </td>
+          <td><p>Takes Button Type SButton</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>button2</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="btns_menus.builds.button_.SButton" href="#btns_menus.Buttons.SButton">SButton</a></code>
+          </td>
+          <td><p>Takes Button Type SButton</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>button3</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="btns_menus.builds.button_.SButton" href="#btns_menus.Buttons.SButton">SButton</a></code>
+          </td>
+          <td><p>Takes Button Type SButton</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>timeout</code></td>
+          <td>
+                <code>Optional[float]</code>
+          </td>
+          <td><p>Interaction Timeout</p></td>
+          <td>
+                <code>DEFAULT_TIMEOUT</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="btns_menus.Buttons.TrioButton.view" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">view</span><span class="p">()</span></code>
+
+<a href="#btns_menus.Buttons.TrioButton.view" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>view</code></td>          <td>
+                <code><span title="discord.ui">ui</span>.<span title="discord.ui.View">View</span></code>
+          </td>
+          <td><p>discord.ui.View</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../getting-started/" class="btn btn-neutral float-left" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../dropmenus/" class="btn btn-neutral float-right" title="DropMenus">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright (c) 2021 skrphenix</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Modern-Realm/discord_btns_menus" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../../getting-started/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../dropmenus/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
